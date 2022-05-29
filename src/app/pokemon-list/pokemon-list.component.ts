@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// Import our service
+import { DataService } from '../services/data.service';
+
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
@@ -8,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    // add service to the constructor
+    private dataService: DataService
+  ) { }
 
   ngOnInit(): void {
+    // Launch getPokemons on init
+    this.dataService.getPokemons()
+    .subscribe((response: any) =>{
+      console.log(response);
+    })
   }
 
 }
