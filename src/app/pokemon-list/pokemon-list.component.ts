@@ -6,9 +6,14 @@ import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
-  styles: [
-  ]
+  styleUrls: ['./pokemon-list.component.css']
 })
+// @Component({
+//   selector: 'app-pokemon-list',
+//   templateUrl: './pokemon-list.component.html',
+//   styles: [
+//   ]
+// })
 export class PokemonListComponent implements OnInit {
 
   // Array to store our pokemons data
