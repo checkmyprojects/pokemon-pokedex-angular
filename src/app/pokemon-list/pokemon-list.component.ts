@@ -45,7 +45,7 @@ export class PokemonListComponent implements OnInit {
     .subscribe((response: any) => {
       // save the amount of pokemons we get from api into the variable
       this.totalPokemons = response.count;
-
+      console.log("POKEMON TOTALES: " + this.totalPokemons)
       response.results.forEach((result: any) => {
         this.dataService.getMoreData(result.name)
         .subscribe((uniqResponse: any) => {
