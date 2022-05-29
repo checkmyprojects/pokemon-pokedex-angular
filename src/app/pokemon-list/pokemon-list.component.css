@@ -14,11 +14,18 @@
     display: grid;
     text-align: center;
 }
+
 .pokemon-grid .box img{
     max-width: 100px;
     display: block;
     margin: 0 auto;
 }
+
+.pokemon-grid .box h3{
+    color: white;
+    background-color: seagreen;
+}
+
 pagination-controls{
     text-align: center;
 }
