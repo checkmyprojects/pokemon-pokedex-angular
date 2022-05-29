@@ -1,27 +1,35 @@
-# PokemonAngular
+# Pokemon Pokedex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+Another quick project to learn some Angular api stuff.
 
-## Development server
+Made using the fantastic and free PokéAPI https://pokeapi.co/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Image text](screenshot.png) 
 
-## Code scaffolding
+## How It's Made:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Tech used:** HTML, CSS, TypeScript, Angular 13
 
-## Build
+Another small project to teach myself Angular.
+Made using the PokéAPI, it will display 12 pokemons by default on each page.
+I had to make a few quick fixes to arrange pokemons so it doesn't look bad.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Optimizations
 
-## Running unit tests
+- CSS is almost non-existant. It will get worked in the future.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Display cards colours according to the pokemon type.
 
-## Running end-to-end tests
+- Clean the code a bit more and optimize the sorting of pokemons.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Add a search option, it should be easy.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Lessons Learned:
+
+I almost left bulbasaur behind because i was starting to count from 1 and this guy is 0. Sry little guy :(.
+
+Read the API docs thoughly to avoid mistakes.
+
+Am I weird if i like flexbox more than grid?
