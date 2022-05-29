@@ -22,6 +22,9 @@ export class PokemonListComponent implements OnInit {
   // The page number we are at, default will be 1
   page = 1;
 
+  // The ammount of pokemons we want to get
+  pokemonsToGet: number = 12;
+
   // Where to save the number of pokemons we have on our page
   totalPokemons: number | undefined;
 
@@ -38,7 +41,7 @@ export class PokemonListComponent implements OnInit {
   // Get Pokemons
   getPokemons(){
     // Launch getPokemons on init
-    this.dataService.getPokemons(10, this.page + 0)
+    this.dataService.getPokemons(this.pokemonsToGet, this.page - 1)
     .subscribe((response: any) => {
       // save the amount of pokemons we get from api into the variable
       this.totalPokemons = response.count;
@@ -48,6 +51,11 @@ export class PokemonListComponent implements OnInit {
         .subscribe((uniqResponse: any) => {
           this.pokemons.push(uniqResponse); //We get data from every pokemon we have and push data into pokemons array
           console.log(this.pokemons);
+          
+          // dirty fix to sort pokemons by id
+          this.pokemons.sort((a, b) => {
+            return a.id - b.id;
+          });
         });
       });
     })

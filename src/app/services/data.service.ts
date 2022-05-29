@@ -18,8 +18,13 @@ export class DataService {
     // api will return first page, then second, third, etc
     // This is how api works and how we use it on our app
     getPokemons(limit: number, offset: number){
-      // conenct to the api requesting just 10 pokemons
+      // connect to the api requesting just 10 pokemons
       // that is how this api is built
+      // If it's the first page, return normally.
+      // If not, multiply by "limit" to skip previous page pokemons
+      if(offset>0){
+        offset *= limit;
+      }
       return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
     }
 
