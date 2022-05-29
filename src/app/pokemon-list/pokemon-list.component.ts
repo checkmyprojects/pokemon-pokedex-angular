@@ -19,6 +19,12 @@ export class PokemonListComponent implements OnInit {
   // Array to store our pokemons data
   pokemons: any[] = [];
 
+  // The page number we are at, default will be 1
+  page = 1;
+
+  // Where to save the number of pokemons we have on our page
+  totalPokemons: number | undefined;
+
   constructor(
     // add service to the constructor
     private dataService: DataService
@@ -28,6 +34,9 @@ export class PokemonListComponent implements OnInit {
     // Launch getPokemons on init
     this.dataService.getPokemons()
     .subscribe((response: any) => {
+      // save the amount of pokemons we get from api into the variable
+      this.totalPokemons = response.count;
+
       response.results.forEach((result: any) => {
         this.dataService.getMoreData(result.name)
         .subscribe((uniqResponse: any) => {
