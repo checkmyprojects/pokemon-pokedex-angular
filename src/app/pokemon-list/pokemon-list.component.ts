@@ -31,8 +31,14 @@ export class PokemonListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Get pokemons on init
+    this.getPokemons();
+  }
+
+  // Get Pokemons
+  getPokemons(){
     // Launch getPokemons on init
-    this.dataService.getPokemons()
+    this.dataService.getPokemons(10, this.page + 0)
     .subscribe((response: any) => {
       // save the amount of pokemons we get from api into the variable
       this.totalPokemons = response.count;

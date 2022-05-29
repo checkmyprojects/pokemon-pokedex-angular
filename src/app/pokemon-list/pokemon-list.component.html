@@ -29,4 +29,7 @@
 <!-- End of Pokemon Grid -->
 
 <!-- Pagination-controls add the pagination numbers and stuff -->
-<pagination-controls></pagination-controls>
+<!-- pageChange will make our variable "page" equal to the page we are at, that's how we control the page we are at -->
+<!-- Also reset pokemons array on each new page so it doesn't grow too big -->
+<!-- Finally call getPokemons to get the new page pokemons -->
+<pagination-controls (pageChange)="page = $event; pokemons = []; getPokemons()"></pagination-controls>

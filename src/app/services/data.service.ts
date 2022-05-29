@@ -13,10 +13,14 @@ export class DataService {
     ) { }
 
     // Get Pokemons from API
-    getPokemons(){
+    // limit: number of pokemons
+    // offset: the pokemons "page"
+    // api will return first page, then second, third, etc
+    // This is how api works and how we use it on our app
+    getPokemons(limit: number, offset: number){
       // conenct to the api requesting just 10 pokemons
       // that is how this api is built
-      return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=10`)
+      return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
     }
 
     // Get More Pokemons from Api
