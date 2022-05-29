@@ -4,6 +4,8 @@ Another quick project to learn some Angular api stuff.
 
 Made using the fantastic and free PokéAPI https://pokeapi.co/
 
+Lide demo at: https://pokemon-pokedex-angular.vercel.app/
+
 ![Image text](screenshot.png) 
 
 ## How It's Made:
